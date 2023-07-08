@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js"></script>
+    <title>Chuck Chat</title>
 </head>
+
 <body>
     <div class="contaner">
-        
+        <h1>Chuck Chat</h1>
+        <div id="input-output">
+            <ul id="messages-box">
+
+            </ul>
+        </div>
+        <form onsubmit="return sendMessage()">
+            <input type="text" name="" id="message" class="usermessage" size="70" placeholder="Write something"
+                autocomplete="off">
+            <button type="submit">Send<i class="fa-solid fa-paper-plane" style="color: #000000;"></i></button>
+        </form>
     </div>
+
+    <script src="index.js"></script>
 </body>
+
 </html>
