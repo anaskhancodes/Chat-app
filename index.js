@@ -16,20 +16,20 @@
 // 
 // 
 // 
-let Username = prompt("Type your name")
+// let Username = prompt("Type your name")
 
-const sendMessage = () => {
-    let message = document.getElementById("message").value
-    firebase.database().ref("messages").push().set({
-        "Sender": Username,
-        "Message": message
-    })
+// const sendMessage = () => {
+//     let message = document.getElementById("message").value
+//     firebase.database().ref("messages").push().set({
+//         "Sender": Username,
+//         "Message": message
+//     })
 
-    let message1 = document.getElementById("message")
-    message1.value = ""
-    return false; 
+//     let message1 = document.getElementById("message")
+//     message1.value = ""
+//     return false; 
     
-}
-console.log("message",message)
-console.log("prompt",prompt)
-// console.log("db",db)
+// }
+// console.log("message",message)
+// console.log("prompt",prompt)
+// // console.log("db",db)
