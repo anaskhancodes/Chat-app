@@ -10,6 +10,7 @@ body{
     background-color: white;
     margin-top: 115px;
     width: 410px;
+    height: 285px;
 }
 
 .contaner div{
@@ -37,14 +38,4 @@ button{
     height: 46px;
     font-size: 19px;
     cursor: pointer;
-}
-
-p{
-    margin-left: 35px;
-}
-
-p a{
-    text-decoration: none;
-    font-size: 25px;
-    color: black;
 }

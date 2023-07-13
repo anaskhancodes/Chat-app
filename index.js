@@ -1,35 +1,63 @@
-// const firebaseConfig = {
-//     apiKey: "AIzaSyCaW1_YD5AOrdXZCJFMJ6DPf6bs3w3fhpQ",
-//     authDomain: "conversation-app-3d804.firebaseapp.com",
-//     projectId: "conversation-app-3d804",
-//     storageBucket: "conversation-app-3d804.appspot.com",
-//     messagingSenderId: "768186841488",
-//     appId: "1:768186841488:web:b452ddf681b75ee34a9b15",
-//     measurementId: "G-RRR5QKQKMF"
-//   };
-//   firebase.initializeApp(firebaseConfig);
-//   const db = firebase.firestore();
-// // 
-// 
-// 
-// 
-// 
-// 
-// 
-// let Username = prompt("Type your name")
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
-// const sendMessage = () => {
-//     let message = document.getElementById("message").value
-//     firebase.database().ref("messages").push().set({
-//         "Sender": Username,
-//         "Message": message
-//     })
+const firebaseApp = firebase.initializeApp({
+    apiKey: "AIzaSyAY0m-1qIdIEArkUcHXsxtjetM4xJeb0_c",
+    authDomain: "signup-signin-for-linkedin.firebaseapp.com",
+    projectId: "signup-signin-for-linkedin",
+    storageBucket: "signup-signin-for-linkedin.appspot.com",
+    messagingSenderId: "403760147279",
+    appId: "1:403760147279:web:0ba28aee82a55c5c7eb33a",
+    measurementId: "G-186K9B6M04"
+});
 
-//     let message1 = document.getElementById("message")
-//     message1.value = ""
-//     return false; 
-    
-// }
-// console.log("message",message)
-// console.log("prompt",prompt)
-// // console.log("db",db)
+
+
+const db = firebaseApp.firestore();
+const auth = firebaseApp.auth();
+
+
+const signUp = () => {
+
+    const email = document.getElementById("email").value
+    const password = document.getElementById("password").value
+    console.log("email =>", email, "password =>", password)
+
+
+
+    firebase.auth().createUserWithEmailAndPassword( email, password)
+        .then((result) => {
+            // Signed in 
+            window.location.href = "./Chat/index.html"
+            // ...
+        })
+        .catch((error) => {
+            alert("Invalid Email")
+            console.log(error.code);
+            console.log(error.message);
+            // ..
+        });
+}
+
+
+
+
+
+const signIn = () => {
+
+    const email = document.getElementById("email").value
+    const password = document.getElementById("password").value
+    console.log("email =>", email, "password =>", password)
+
+
+    firebase.auth().signInWithEmailAndPassword(email, password)
+        .then((result) => {
+            // Signed in
+            window.location.href = "./Chat/index.html"
+            // ...
+        })
+        .catch((error) => {
+            alert("Invalid Email and password")
+            console.log(error.code);
+            console.log(error.message);
+        });
+}
