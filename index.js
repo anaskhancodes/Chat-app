@@ -17,12 +17,21 @@ const auth = firebaseApp.auth();
 
 
 const signUp = () => {
-
+    const name = document.getElementById("name").value
     const email = document.getElementById("email").value
     const password = document.getElementById("password").value
     console.log("email =>", email, "password =>", password)
 
 
+    // db.collection("users").add({
+    //     name: name
+    // })
+    // .then((docRef) => {
+    //     console.log("Document written with ID: ", docRef.id);
+    // })
+    // .catch((error) => {
+    //     console.error("Error adding document: ", error);
+    // });
 
     firebase.auth().createUserWithEmailAndPassword( email, password)
         .then((result) => {
