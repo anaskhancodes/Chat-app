@@ -70,11 +70,16 @@
 
         let renderMessages = () => {
             db.collection("users").get().then((querySnapshot) => {
+
+                
+                                
                 let container = document.getElementById("messages-box");
                 container.innerHTML = "";
                 if (querySnapshot.size === 0) {
                     container.innerHTML = "<div>No Users found</div>";
                     console.log("no chat");
+                   
+        
                 } else {
                     querySnapshot.forEach((doc) => {
                         console.log(`${doc.id} => ${doc.data()}`);
@@ -102,6 +107,8 @@
 
 
                         container.appendChild(row);
+
+                        
                     });
                 }
             });
@@ -123,6 +130,8 @@
                     renderMessages();
                 }
             }
+
+
         }
     </script>
 
