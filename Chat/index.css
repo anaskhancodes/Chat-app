@@ -4,6 +4,7 @@ body{
     display: flex;
     justify-content: center;
     background-color: rgb(19, 19, 19);
+    background-image: url(./../Img/3lAjym.webp);
 }
 
 .contaner{
